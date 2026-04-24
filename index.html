@@ -9,7 +9,7 @@
 
     <main>
 
-         <div class="container text-dark bg-light-subtle rounded-3 shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="margin-top: 50px;" >
+         <div class="container border shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="margin-top: 50px;" >
     
             <h2 id="titulo" class="text-center" style="margin-top: 20px ;">Cadastro Aluno</h2>
             <p id="subtitulo" class="text-center">Preencha os dados abaixo para realizar o registro completo do aluno no sistema acadêmico.</p>
@@ -44,10 +44,13 @@
   </div>
 
   <div class="col-md-4">
-    <label for="Email" class="form-label">Email</label>
-    <input type="email" class="form-control" id="email">
-    <div class="invalid-feedback">
-    </div>   
+    <label for="email" class="form-label">Email</label>
+    <div class="input-group has-validation">
+      <span class="input-group-text" id="inputGroupPrepend">@</span>
+      <input type="text" class="form-control" id="email" aria-describedby="inputGroupPrepend" required>
+      <div class="invalid-feedback">
+      </div>
+    </div>
   </div>
 
   <div class="col-md-12">
