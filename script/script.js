@@ -33,8 +33,8 @@ form.addEventListener('submit', function(e){
     }
 
     if(cpf.length < 11){
-    alert('CPF Inválido!');
-    valido = false;
+        alert('CPF Inválido!');
+        valido = false;
     }
 
     if(cpf.trim() === ''){
@@ -48,8 +48,8 @@ form.addEventListener('submit', function(e){
     }
 
     if(telefone.length < 10){
-    alert('Telefone Inválido!');
-    valido = false;
+        alert('Telefone Inválido!');
+        valido = false;
     }
 
     if(telefone.trim() === ''){
@@ -67,13 +67,95 @@ form.addEventListener('submit', function(e){
     }
 
     if(endereco.length < 10){
-    alert("Endereço muito curto!");
-    valido = false;
+        alert("Endereço muito curto!");
+        valido = false;
     }
 
     if(endereco.trim() === ""){
-    alert("Endereço obrigatório!");
-    valido = false;
-    }   
+        alert("Campo Endereço obrigatório!");
+        valido = false;
+    }  
+
+    if(!/\d/.test(endereco)){
+        alert("Informe o número do endereço!");
+        valido = false;
+}
+    
+    if(cidade.trim() === ""){
+        alert("Campo Cidade obrigatório!");
+        valido = false;
+    }  
+
+    if(estado.trim() === ""){
+        alert("Campo Estado obrigatório!");
+        valido = false;
+    } 
+    
+    if(cep.length < 8){
+        alert("CEP Inválido!");
+        valido = false;
+    }
+
+    if(cep.trim() === ""){
+        alert("Campo CEP obrigatório!");
+        valido = false;
+    } 
+
+    if(curso.trim() === ""){
+        alert("Campo Curso obrigatório!");
+        valido = false;
+    }  
+
+    if(matricula.trim() === ""){
+        alert("Campo Matrícula obrigatório!");
+        valido = false;
+    } 
+
+    if(senha.length < 6){
+        alert("Senha muito curta!");
+        valido = false;
+    }
+
+    if(senha.trim() === ""){
+        alert("Campo Senha obrigatório!");
+        valido = false;
+    } 
+
+    if(!/\d/.test(senha)){
+        alert("A senha deve conter pelo menos um número!");
+        valido = false;
+    }
+
+    if(confirmar != senha){
+        alert("Senha incorreta");
+        valido = false;
+    }
+
+    if(confirmar.trim() === ""){
+        alert("Campo Confirmar obrigatório!");
+        valido = false;
+    } 
+
+    if(valido){
+
+    dados.push({
+        nome,
+        cpf,
+        dataNascimento,
+        telefone,
+        email,
+        endereco,
+        cidade,
+        estado,
+        cep,
+        curso,
+        matricula,
+        senha
+    });
+
+    console.log(dados); 
+    alert('Cadastro feito com sucesso!');
+    form.reset();
+}
 
 })
